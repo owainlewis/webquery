@@ -11,5 +11,4 @@ public class WebqueryApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WebqueryApplication.class, args);
 	}
-
 }
