@@ -20,8 +20,7 @@ public final class Parser {
 
     private Map<String, String> getAttributesMap(Element e) {
         Map<String, String> result = new HashMap<>();
-        return e.attributes()
-                .asList()
+        return e.attributes().asList()
                 .stream()
                 .reduce(result, (map, value) -> {
                     map.put(value.getKey(), value.getValue());
