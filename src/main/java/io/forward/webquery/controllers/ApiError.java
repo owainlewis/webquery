@@ -22,12 +22,6 @@ final class ApiError {
         this.status = status;
     }
 
-    ApiError(HttpStatus status, Throwable ex) {
-        this.status = status;
-        this.message = "Unexpected error";
-        this.debugMessage = ex.getLocalizedMessage();
-    }
-
     ApiError(HttpStatus status, String message, Throwable ex) {
         this.status = status;
         this.message = message;
