@@ -5,9 +5,10 @@ import io.forward.webquery.model.ResultSet;
 import io.forward.webquery.model.Tag;
 import io.forward.webquery.parser.Parser;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,20 +17,14 @@ import java.util.List;
 @RestController
 @Slf4j
 @RequestMapping("/api/v1")
-public final class IndexController {
+@CacheConfig(cacheNames = {"query"})
+public class IndexController {
 
     @RequestMapping("/query")
+    @Cacheable
     public ResultSet index(@RequestBody Query query) {
         log.info("Fetching document");
         final List<Tag> results = extractFromWebPage(query.getUri(), query.getQuery());
-        return new ResultSet(results);
-    }
-
-    @RequestMapping("/")
-    public ResultSet index(@RequestParam String query) {
-        log.info("Fetching document");
-        final String uri = "https://spring.io/guides/gs/actuator-service/";
-        final List<Tag> results = extractFromWebPage(uri, query);
         return new ResultSet(results);
     }
 

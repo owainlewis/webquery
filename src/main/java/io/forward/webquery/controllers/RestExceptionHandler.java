@@ -1,5 +1,6 @@
 package io.forward.webquery.controllers;
 
+import io.forward.webquery.model.ApiError;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

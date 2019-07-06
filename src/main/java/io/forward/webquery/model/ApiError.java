@@ -1,4 +1,4 @@
-package io.forward.webquery.controllers;
+package io.forward.webquery.model;
 
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 @Data
 @JsonTypeInfo(include = JsonTypeInfo.As.WRAPPER_OBJECT, use = JsonTypeInfo.Id.CUSTOM, property = "error", visible = true)
 @JsonTypeIdResolver(LowerCaseClassNameResolver.class)
-final class ApiError {
+public final class ApiError {
 
     private HttpStatus status;
 
@@ -18,11 +18,11 @@ final class ApiError {
 
     private String debugMessage;
 
-    ApiError(HttpStatus status) {
+    public ApiError(HttpStatus status) {
         this.status = status;
     }
 
-    ApiError(HttpStatus status, String message, Throwable ex) {
+    public ApiError(HttpStatus status, String message, Throwable ex) {
         this.status = status;
         this.message = message;
         this.debugMessage = ex.getLocalizedMessage();

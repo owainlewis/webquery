@@ -14,27 +14,27 @@ POST /api/v1/query \
 -d '{"uri": "https://news.ycombinator.com", "query": ".storylink"}"'
 ```
 
-Which will return 
+Which will return
 
 ```json
 {
-    "elements": [
-        {
-            "tag": "a",
-            "text": "How the Dat Protocol Works",
-            "attributes": {
-                "href": "https://datprotocol.github.io/how-dat-works/",
-                "class": "storylink"
-            }
-        },
-        {
-            "tag": "a",
-            "text": "Bladder cancer 'attacked and killed by common cold virus'",
-            "attributes": {
-                "href": "https://www.bbc.com/news/health-48868261",
-                "class": "storylink"
-            }
-        },
-        ...
+   "elements":[
+      {
+         "tag":"a",
+         "text":"How the Dat Protocol Works",
+         "attributes":{
+            "href":"https://datprotocol.github.io/how-dat-works/",
+            "class":"storylink"
+         }
+      },
+      {
+         "tag":"a",
+         "text":"Understanding Kafka with Factorio",
+         "attributes":{
+            "href":"https://hackernoon.com/understanding-kafka-with-factorio-74e8fc9bf181",
+            "class":"storylink"
+         }
+      }
+   ]
 }
 ```
