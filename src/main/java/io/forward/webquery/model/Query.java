@@ -9,18 +9,18 @@ public final class Query {
     @Getter
     @Setter
     @NotNull
-    private String query;
+    private String uri;
 
     @Getter
     @Setter
     @NotNull
-    private String uri;
+    private String selector;
 
     public Query () {
     }
 
-    public Query(String uri, String query) {
+    public Query(String uri, String selector) {
         this.uri = uri;
-        this.query = query;
+        this.selector = selector;
     }
 }

@@ -11,7 +11,7 @@ To get all the stories from Hacker News
 ```
 POST /api/v1/query \
 -H 'Content-Type: application/json' \
--d '{"uri": "https://news.ycombinator.com", "query": ".storylink"}"'
+-d '{"uri": "https://news.ycombinator.com", "selector": ".storylink"}"'
 ```
 
 Which will return
